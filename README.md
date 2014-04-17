@@ -5,7 +5,7 @@ Version 0.1
 
 There is a single file which contains the fuzzy photo code - fp.js which can be found in the js directory.
 This files does not currently access a server an instead look up local files.
-The only file provider so far is ERPS/105998.xml.
+The only file provided so far is ERPS/105998.xml.
 This file contains some initial links to ERPS record 105598.
 The examples directory contains two examples of fp.js being used:
 - simple
