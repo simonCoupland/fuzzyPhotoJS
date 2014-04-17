@@ -1,0 +1,109 @@
+#container {
+   width:90%;/* leave a little breathing space L-R? Or not? */
+   min-width:740px;
+   max-width:960px;
+   margin:0 auto;
+   text-align:left;
+}
+
+/* HEADER AND TOP MENU */
+
+#header {
+	width:100%;/* forces hasLayout in IEWin for absolute positioning on .tabmenu */
+   position:relative;
+   background-color:#e8e0d1;
+   background-image:url(/graphics/header_background.gif);
+   background-position:top right;
+   background-repeat:no-repeat;
+}
+#header #logo {
+   width:69px;
+   height:69px;
+   float:left;
+   padding:1em 8px 1em 10px;
+}
+#header #logo img {
+   width:69px;
+   height:69px;
+   border:0;/* superfluous? */
+}
+#header .tabmenu {
+	position:absolute;
+	right:0;
+	bottom:0;/* 1px no longer needed to prevent overlap in Safari, Firefox, Opera */
+}
+#header h1 {
+   padding-top:14px;
+}
+#header h2 {
+   margin:0;
+   padding:0.25em 0 1.5em;
+   font-size:1.5em;
+   font-style:italic;
+   letter-spacing:0.06em;
+   font-family:palatino, times, 'Times New Roman', serif;
+}
+/* REMOVE and compensate: old spaghetti CSS to get advanced search tab in right place */
+#header form {float:left;width:26em;background:transparent;}
+#header form #simplesearch {float:left;margin-bottom:0;width:30em;}
+#header form #simplesearch input,
+#header form #simplesearch label {
+	font-size:0.8em;
+	margin-left:-3px;
+	margin-right:2px;
+}
+#header form #simplesearch .smalltext {font-size:0.8em;padding-left:4px;}
+
+/* GLOBAL SEARCH (UNDER HEADER) */
+
+#header form {
+	position:absolute;
+	left:0;
+	bottom:1px;
+	padding:0.25em 1em;
+	margin-left:77px;
+}
+#header form input {
+	padding:0.1em 0.25em;
+	margin-right:6px;
+	border:#907f6b 1px solid;
+   background-color:#f7f3ea;
+}
+#header form #simplesearch .noborder {border:none;}
+#header form input:hover,
+#header form input:focus {
+   background-color:#fff;
+}
+/* CONTENT AREA */
+
+#content {
+   background-color:#e8e0d1;
+   background-image:url(/graphics/content_background.gif);
+   background-position:top right;
+   background-repeat:repeat-y;
+   width:100%;
+   padding-top:1.5em;
+   padding-bottom:1em;
+   overflow:hidden;
+   position:relative;
+   z-index:1;
+}
+
+/* NAVIGATION MENU */
+
+#content #navigation {
+   margin-top:1.75em;
+   background:transparent;
+   float:right;
+   width:12em;
+}
+
+/* FOOTER */
+
+#footer {
+   border-top:1px #fff solid;
+   background-color:#f7f3ea;
+   background-image:url(/graphics/footer_background.gif);
+   background-position:top right;
+   clear:both;
+}

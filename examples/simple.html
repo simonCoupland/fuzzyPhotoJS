@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+	<title>Simple Fuzzy Photo Javascript Demo</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<!-- Fuzzy Photo Code -->	
+<script src="js/jquery-1.9.1.js"></script>
+<script src="../js/fp.js"></script>
+<script type="text/javascript">
+$(document).ready(
+	function()
+	{
+		// Obtain any links from the fuzzyPhoto server
+		var FpObject = FPGetRecord(0, 105998);
+		
+		// Write out objects contain to function1 div
+		var FpStr = "<p>readyState: " + FpObject.readyState + "</p>";
+		FpStr += "<p>status: " + FpObject.status + "</p>";
+		FpStr += "<p>statusText: " + FpObject.statusText + "</p>";
+		FpStr += "<p>responseText: <pre>" + FpObject.responseText + "<pre></p>";
+		$("#function1").append("<h1>jqXHR Object (FPObject) returned from the call FPGetRecord(0, 105998);</h1>" + FpStr);
+		
+		// Parse the response text
+		if(FpObject.status == 200)
+		{
+			var FpJSONStr = FPXmlToJSON(FpObject.responseText);
+			$("#function1").append("<h1>JSON string returned from the call FPXmlToJSON(FpObject.responseText);</h1>" + FpJSONStr);
+		}
+	}
+);
+</script>
+
+
+</head>
+<body>
+<div id="function1"></div>
+<div id="function2"></div>
+</body>
+</html>
