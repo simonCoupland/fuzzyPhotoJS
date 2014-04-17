@@ -25,3 +25,5 @@ To do after the Easter break:
 Test fp.js
 
 Create examples of expanding UI components rather than a popup.
+
+Add missing URLs to the XML file.
