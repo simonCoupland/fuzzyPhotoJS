@@ -20,10 +20,12 @@ The examples directory contains two examples of fp.js being used:
 	A clone of the object page for ERPS 105598.
 	This example uses JQuery UI tabs to render a model dialog box giving access to the linked records.
 	
-To do after the Easter break:
+- nmm
+	A mock-up of what the National Media Museum widget will look lioke.  The links for this aren't currently valid.  
+	This is becuase of the trouble we have had obtaining links from the NMM data.
+	This example uses JQuery UI accordian to render the collapsable widget.
+To do:
 
 Test fp.js
-
-Create examples of expanding UI components rather than a popup.
 
 Add missing URLs to the XML file.

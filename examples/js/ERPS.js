@@ -58,41 +58,50 @@ function showFP()
 
 function ERPSFormattedString(m_groupIndex, m_linkArray, m_linkCount) 
 {
-	var m_str = "<div style='padding-top:10px;'>"; // an empty string
+	var l_str = "<div style='padding-top:10px;'>"; // an empty string
 	// The start index of the link array
-	var m_startIdx = Math.min(m_groupIndex*10, m_linkArray.length);
+	var l_startIdx = Math.min(m_groupIndex*10, m_linkArray.length);
 	// The end index of the math array - display 10 at one time
-	var m_endIdx = Math.min((m_groupIndex+1)*10, m_linkArray.length);
+	var l_endIdx = Math.min((m_groupIndex+1)*10, m_linkArray.length);
 	// Loop over the link array constructing content as we go
 	
-	for(i = m_startIdx;i < m_endIdx; i++)
+	for(i = l_startIdx;i < l_endIdx; i++)
 	{
-		var m_blurb = m_linkArray[i].title + ", " + m_linkArray[i].source;
-		if(m_blurb.length > 50) m_blurb = m_blurb.substr(0,50) + "...";
-		m_link = " <a href='" + m_linkArray[i].url + "' target='new'>Click here</a>";
-		m_str += "<p>" + m_blurb + m_link + "</p>";			
+		var l_clipLength = 30; // Length before we clip each element of text
+		
+		var l_title = m_linkArray[i].title;
+		if(l_title.length > l_clipLength) l_title = l_title.substr(0,l_clipLength-1) + "...";
+		if(l_title.length == 0) l_title = "No known title";
+		
+		var l_person = m_linkArray[i].person;
+		if(l_person.length > l_clipLength) l_person = l_person.substr(0,l_clipLength-1) + "...";
+		if(l_person.length == 0) l_person = "Photographer not known";
+		
+		var l_blurb = l_title + ", " + l_person + ", " + m_linkArray[i].source;
+		l_link = " <a href='" + m_linkArray[i].url + "' target='new'>Click here</a>";
+		l_str += "<p>" + l_blurb + l_link + "</p>";			
 	}
 	// Add links to subsequent pages
 	
 	if(m_linkArray.length > 10)
 	{
 		// Write first two links
-		m_str += "</div><div id='FP_viewMore'>View more: ";
-		if(m_groupIndex == 0) {m_str += "1, ";}
-		else {{m_str += "<a onClick='updateFP(0);'>1</a>, ";}}
-		if(m_groupIndex == 1) {m_str += "2";}
-		else {{m_str += "<a onClick='updateFP(1);'>2</a>";}}
+		l_str += "</div><div id='FP_viewMore'>View more: ";
+		if(m_groupIndex == 0) {l_str += "1, ";}
+		else {{l_str += "<a onClick='updateFP(0);'>1</a>, ";}}
+		if(m_groupIndex == 1) {l_str += "2";}
+		else {{l_str += "<a onClick='updateFP(1);'>2</a>";}}
 		
 		// Check if we need to write a third link
 		if(m_linkArray.length > 20)
 		{
-			if(m_groupIndex == 2) {m_str += ", 3";}
-			else {{m_str += ", <a onClick='updateFP(2);'>3</a>";}}
+			if(m_groupIndex == 2) {l_str += ", 3";}
+			else {{l_str += ", <a onClick='updateFP(2);'>3</a>";}}
 		}
-		m_str += "</div>";
+		l_str += "</div>";
 	}
 	
-	return m_str;
+	return l_str;
 };
 
 function updateFP(m_groupIndex)
