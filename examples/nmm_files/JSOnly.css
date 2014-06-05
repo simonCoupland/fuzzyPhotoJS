@@ -1,0 +1,62 @@
+.bgtabs ul.panes li { display: none; }
+.bgtabs ul.panes li li { display: block; }
+.bgtabs ul.panes li.active { display: block; }
+
+/* slide carousel */
+.slide-carousel { overflow: hidden; position: relative; }
+.slide-carousel li { position: absolute; top: 0; left: 0; overflow: hidden; }
+.slide-carousel li.open .handle { cursor: default; background-position: -160px 314px; }
+
+/* homepage carousel */
+#HomepageCarousel { height: 365px; }
+#HomepageCarousel li.first { width: 940px; }
+#HomepageCarousel.js li.first { width: 920px; }
+#HomepageCarousel li.open .handle { background-position: -160px 314px; }
+
+/* Flim carousel */
+.film-carousel { height: 265px; margin-bottom: 20px; }
+.film-carousel li.first { width: 540px; }
+.film-carousel li.open .handle { background-position: -160px 214px; }
+
+
+/* styles for jCarousel - simple image carousel */
+.jcarousel-clip { width: 438px;}
+.simple-image-carousel { width: 438px; height: 299px; }
+.simple-image-carousel .jcarousel-item { width: 438px; height: 299px; }
+
+/* jCarousel Buttons */
+.jcarousel-next-horizontal { position: absolute; top: 130px; right: 5px; width: 30px; height: 31px; cursor: pointer; background: transparent url(/img/NMeM/layout/carousel/Arrows.png) no-repeat right 0; }
+.jcarousel-prev-horizontal { position: absolute; top: 130px; left: 5px; width: 30px; height: 31px; cursor: pointer; background: transparent url(/img/NMeM/layout/carousel/Arrows.png) no-repeat -30px 0; }
+
+
+.simple-image-carousel {
+height:299px;
+width:438px;
+}
+.light-carousel-next {
+background:url("/img/NMeM/layout/carousel/Arrows.png") no-repeat scroll right 0 transparent;
+cursor:pointer;
+height:31px;
+position:absolute;
+right:5px;
+top:130px;
+width:30px;
+}
+.light-carousel-prev {
+background:url("/img/NMeM/layout/carousel/Arrows.png") no-repeat scroll -30px 0 transparent;
+cursor:pointer;
+height:31px;
+left:5px;
+position:absolute;
+top:130px;
+width:30px;
+}
+.show-hide ul {
+display:none;
+}
+
+.image-container { height: 299px; overflow:hidden; }
+
+
+/* show-hide */
+.show-hide ul { display: none; }

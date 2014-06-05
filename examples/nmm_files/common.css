@@ -1,0 +1,1000 @@
+/* ========================================================================================
+NMM - COMMON CLASS ELEMENTS 
+Version:1.0
+Author: L Kennedy-Murray
+=========================================================================================== */
+
+/* VARIOUS LIST STYLINGS FOR MIDDLE/RIGHT COLUMNS
+=========================================================================================== */
+
+/* LIST FOR KEYLINE PROMO BOXES FEATURED IN MIDDLE CONTENT AREA i.e. educators homepage */
+ul.promo-keyline{
+		list-style:none;
+		margin:20px 0px;
+		padding:0px;
+	}
+.collection-meettheteam ul.promo-keyline{
+		list-style:none;
+		margin:5px 0px;
+		padding:0 0 0 15px;
+	}
+		
+	ul.promo-keyline li{
+		float:left;
+		display:block;
+		width:150px;
+		background:#fff;
+		margin-right:13px;
+		padding:10px;
+		border:1px solid #c5c5c5;	
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		border-radius: 5px;
+	}
+		ul.promo-keyline li h2{
+			font-size:130%;
+		}
+		
+		ul.promo-keyline li img{
+			/*position:relative;CC IE6*/
+			margin:0px -10px;
+		}
+		
+		ul.promo-keyline li.last{
+			margin-right:0px !important;
+		}
+
+/* LIST FOR JUST A SERIES OF LOGOS FEATURED IN MIDDLE CONTENT AREA i.e. educators homepage */
+ul.logos{
+	list-style:none;
+	margin:10px;
+	padding:0px;
+}
+	ul.logos li{
+		display:inline;
+		margin-right:10px
+	}
+			
+/*RIGHT HAND PROMO LIST BOXES */
+
+/* promo box - image - title - text
+*/
+div#right-column ul.promo{
+	float:left;
+	list-style:none;
+	margin:0px 0px 15px 0px;
+	padding:0px;
+}
+	
+	div#right-column ul.promo li .shadow .box a{
+		cursor:pointer;/*uses DD_roundies so need to put back in link pointer*/
+	}
+	
+	div#right-column ul.promo li .shadow .box img{
+		margin:-16px -10px 5px;
+		/*margin:-16px -11px 5px;CC IE8*/
+	}
+	
+	div#right-column ul.promo li{
+		float:none;/*req for FF2*/
+		clear:both;/*req for FF2*/
+		display:block;/*req for FF2*/
+	}
+	
+	div#right-column ul.promo li a{
+		font-weight:bold;
+	}
+		div#right-column ul.promo li p{
+			font-size:100%;
+			margin-bottom:0px;
+		}
+
+/*MIDDLE/RIGHT HAND PROMO LISTS */
+
+/* information - title - image - text
+*/
+div#middle-column ul.information,
+div#right-column ul.information{
+	list-style:none;
+	margin:0px;
+	padding:0px;
+}
+	div#middle-column ul.information .box{
+	padding:8px 10px 1px;
+	}
+	
+	div#middle-column ul.information li img{
+		margin: -8px -10px 8px;
+	}
+	
+	div#middle-column ul.information p{
+		margin-bottom:10px;
+	}
+	
+	div#right-column ul.information li img{
+		margin:10px -10px 0px;
+		/*margin:10px -11px 0px;CC IE8*/
+	}
+	
+	div#right-column ul.information p{
+		margin-bottom:0px;
+	}
+	
+	div#right-column ul.information li a{
+		color:#000;
+	}
+	
+	div#right-column ul.information li a:visited{
+		color:#666;
+	}
+	
+	div#right-column ul.information li a:hover{
+		color:#666;
+	}
+
+/* EVENT TIMES (MAIN CONTENT LOCATION/TIME ETC + EVENT DETAIL RIGHT HAND AREA)
+*/
+ul.event-times,
+ol.event-times{
+	list-style:none;
+	margin:0px -10px;
+	/*margin:0px -11px;CC IE8*/
+	padding:0px;
+}
+	div#middle-column ul.event-times,
+	div#middle-column ol.event-times{
+		margin:0px -20px;
+		clear:both;
+	}
+	
+	div#right-column ul.event-times,
+	div#right-column ol.event-times{
+		margin-top:10px;
+	}
+	
+	/*adjust link colours, make blue instead of black*/
+	div#right-column ul.event-times a,
+	div#right-column ol.event-times a{
+		font-weight:normal;
+		color:#198ac5;
+	}
+		div#right-column ul.event-times a:visited,
+		div#right-column ol.event-times a:visited{
+			font-weight:normal;
+			color:#f16d9a;
+		}
+		div#right-column ul.event-times a:hover,
+		div#right-column ol.event-times a:hover{
+			font-weight:normal;
+			color:#7ac143;
+		}
+	
+	ul.event-times{
+		margin-bottom:10px;
+	}
+	
+	ul.event-times li,
+	ol.event-times li{
+		/*zoom:1;CC IE ALL*/
+		padding:7px 10px;
+		margin:0px !important;
+	}
+	
+	div#middle-column ul.event-times li,
+	div#middle-column ol.event-times li{
+		padding:7px 20px;
+	}
+	
+	ul.event-times li a.button,
+	ol.event-times li a.button{
+		float:right;
+		clear:right;
+		/*display:inline;CC IE6*/
+		margin:0px 0px 5px 10px;
+	}
+		
+		ul.event-times li h2{
+			float:left;
+			/*display:inline;CC IE6*/
+			font-size:100%;
+			color:#000;
+			margin:0px;
+			margin-right:10px;
+		}
+		
+		ul.event-times li p,
+		ol.event-times li p{
+			margin:0px !important;
+		}
+	
+
+	
+    /*ul.event-times > li:first-child + li,	
+	ul.event-times > li:first-child + li + li + li,*/
+	/*ol.event-times li:first-child + li,
+	ol.event-times li:first-child + li + li + li,*/
+	.event-times li.alt
+    {
+		background:#ccc !important;
+	}
+	
+	/*when used within promo-keyline event-times needs a border, nice IE bug! CC IE ALL
+	div#middle-column ul.promo-keyline ol.event-times{
+		border-left:1px solid #ccc !important;
+		border-right:1px solid #ccc !important;
+	}*/
+
+/* LIST WITH BORDER-TOP SEPARATOR
+*/
+ul.border-list{
+	list-style:none;
+	margin:20px 0px;
+	padding:0px;
+}
+	ul.border-list li{
+		border-top:1px solid #cccccc;
+		padding:20px 0px;
+	}
+		
+		ul.border-list li h3{
+			clear:left;
+		}
+		
+		ul.border-list li img{
+			float:right;
+			/*display:inline;CC IE6*/
+			margin-left:20px;
+		}
+	
+	ul.border-list li ul.yellow-list li{
+		border-top:none;
+		padding-top:0px !important;
+		padding-bottom:0px !important;
+	}
+
+/* BLOG LIST WITH BORDER-TOP SEPARATOR - ATRRIBUTES SAME AS BORDER-LIST, BUT CREATED SO SIFR SPANS FULL WIDTH
+*/
+ul.blog-list{
+	list-style:none;
+	margin:20px 0px;
+	padding:0px;
+}
+	ul.blog-list li{
+		border-top:1px solid #cccccc;
+		padding:20px 0px 5px;
+	}
+
+/* WORD PRESS BLOG LIST*/
+ul.WP-blog-posts
+    {
+        list-style:none;
+	    margin:20px 0px;
+	    padding:0px;
+    }    
+    ul.WP-blog-posts li{
+		border-top:1px solid #cccccc;
+		padding:20px 0px 5px;
+        min-height: 135px;
+	}	
+	ul.WP-blog-posts li div.WP-left{
+		float:left;		
+	}
+	ul.WP-blog-posts li div.WP-left img{
+		padding-right: 15px;
+		width:190px;
+		height:130px;
+	}
+	ul.WP-blog-posts li div.WP-right{
+		overflow: hidden;
+	}
+	ul.WP-blog-posts li div.WP-right h3{
+		font-size:130%; 
+		color:#198AC5;
+	}
+	ul.WP-blog-posts li div.WP-right a{
+		float:right;
+	}
+	ul.WP-blog-posts li div.WP-right p.date{
+		font-size: 90%;
+	}	
+	
+	
+/* TEAM LIST IN ABOUT US
+*/
+ul.team-list{
+	list-style:none;
+	margin:20px 0px;
+	padding:0px;
+}
+	ul.team-list li{
+		border-top:1px solid #cccccc;
+/*		padding:20px 200px 0px 0px;*/
+		padding-top:20px;
+	}		
+		ul.team-list li img.team-member{
+			margin:10px 0px !important;
+		}
+		
+	ul.team-list li ul.promo-keyline{
+		float:right;
+		display:inline;/*CC IE6*/
+/*		margin:0px -200px 10px 30px;*/
+	}
+	
+ul.promo-keyline h2 {
+	display:inline;
+	width:100px;
+	}	
+	
+	ul.team-list li ul.promo-keyline li{
+		padding:10px !important;
+		margin-right:0px;
+	}
+	
+	ul.team-list li ol.event-times{
+		border:none !important;		
+		margin:10px -10px 0px !important;
+	}
+	ul.team-list li ol.event-times li{
+		float:none;
+		width:auto;
+/*		background:#fff;*/
+		border:none !important;
+		padding:7px 10px !important;
+		border:0px !important;	
+		-moz-border-radius: 0px !important;
+		-webkit-border-radius: 0px !important;
+		border-radius: 0px !important;
+	}
+
+/* REMOVE BULLETS FROM UL/OL LIST
+*/
+ul.remove-bullet,
+ol.remove-bullet{
+	list-style:none;
+	margin:0px;
+	padding:0px;
+}
+
+/* POD CASTS
+*/
+	ul.pod-casts{
+		list-style:none;
+		padding:0px;
+		margin:0px -20px;
+	}
+		ul.pod-casts li{
+			padding:10px 20px;
+		}
+	
+		ul.pod-casts li.alt{
+			background:#ccc;
+		}
+
+/* CURVED BUTTON LIST
+*/
+ul.button-list,
+ol.button-paging{
+	list-style:none;
+	margin:10px 0px;
+	padding:0px;
+}
+	ol.button-paging{
+		/*position:relative;CC IE6*/
+		float:right;
+		padding:0px 0px 0px 10px;
+	}
+
+	ul.button-list li,
+	ol.button-paging li{
+		float:left;
+		display:block;
+		vertical-align:middle;
+		padding-right:10px;
+	}
+		ol.button-paging li{
+			padding-right:3px;
+		}
+
+ul.button-list li a,
+ol.button-paging li a,
+a.button{
+	cursor:pointer;
+	float:left;
+	display:block;
+	width:auto;
+	font-size:90%;
+	color:#FFF !important;
+	text-align:center;
+	text-decoration:none;
+	line-height:normal;
+	background:#7ac143;
+	padding:3px 8px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+	ul.button-list li a:hover,
+	ol.button-paging li a:hover,
+	a.button:hover{
+		background:#f16d9a;
+	}
+	
+span.notBook{	
+	float:right;
+	clear:right;
+	/*display:inline;CC IE6*/
+	margin:0px 0px 5px 10px;
+	display:block;
+	width:auto;
+	font-size:90%;
+	color:#FFF !important;
+	text-align:center;
+	text-decoration:none;
+	line-height:normal;	
+	background:#198AC5;
+	padding:3px 8px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+/* ALPHABET BUTTON LIST - amend button-list
+*/
+
+ul.button-list.alphabet{
+	margin-top:0px;
+}
+	ul.button-list.alphabet li{
+		padding-right:5px !important;
+		
+	}
+		ul.button-list.alphabet li a{
+			font-size:110%;
+			padding:3px 8px;	
+		}
+
+/* YELLOW BULLET LIST
+*/
+ul.yellow-list{
+	list-style:none;
+	margin-left:0px;
+	padding-left:0px;
+}
+	ul.yellow-list li{
+		zoom:1; /*stop ie hiding yellow circle on hover*/
+		background:url(/img/NMeM/layout/bullet_yellow.gif) 0px 7px no-repeat;
+		padding-left:25px;
+		line-height:normal; /*LK 18nov*/
+		margin-bottom:4px !important;/*LK 18nov*/
+	}
+
+/* BOX FOR IMAGE CONTAINING CAPTION TITLE TEXT/INFORMATIONAL TEXT
+*/
+div.image-information{
+	float:right;
+	/*display:block;CC IE6*/
+	width:276px;
+	text-align:left;
+	margin-left:20px;
+}
+	/*overwrite img details in ul.border-list*/
+	div.image-information img{
+		float:none !important;
+		margin:0px 0px 7px !important;
+		display:block;
+	}
+	
+	div.image-information cite{
+		font-size:80%;
+		line-height:150%;
+		font-style:normal;
+	}
+
+/* FILM INFORMATION ON FILM/IMAX PAGES PLUS TABLE OF FILM TIMES
+=========================================================================================== */
+/*film information list appearing to left of table.film-times*/
+ul.film-info{
+	float:left;
+	display:block;
+	width:120px;
+	list-style:none;
+	margin:0px 20px 0px 0px;
+	padding:0px;
+}
+	ul.film-info li{
+		margin:0px;
+		padding:0px;
+	}
+	
+	ul.film-info li p{
+		margin-bottom:5px;
+	}
+	
+table.film-times{
+	width:500px;
+}
+		
+	table.film-times th{
+		color:#FFF;
+		background:#000;
+		padding:8px 10px;
+		text-align:left;
+		vertical-align:top;
+	}
+	
+	table.film-times td{
+		text-align:left;
+		vertical-align:middle;
+		padding:8px 10px;
+	}
+	
+	/*strike through on HREF for sold out times*/
+	table.film-times td.soldout a{
+		color:#999 !important;
+		text-decoration:line-through;
+	}
+	
+		/*JQUERY tooltip for "sold out" HOVER*/
+		.tooltip{
+			display:none;
+			width:60px;
+			font-weight:bold;
+			line-height:95%;
+			text-align:center;
+			border:1px solid #000;
+			background:#F16D9A;
+			opacity:0.85;
+			filter:alpha(opacity=85);
+			padding:3px 5px;
+		}
+	
+	table.film-times tr.alt td{
+		background:#cccccc;
+	}
+	
+	table.film-times tfoot tr td{
+		color:#FFF;
+		background:#000;
+		font-weight:bold;
+	}
+	
+	table.film-times tfoot tr.alt td{
+		color:#000;
+		background:#fff;
+		font-weight:normal;
+		padding-top:20px;
+	}
+
+	/*adjust colour for right hand column*/
+	div#right-column table.film-times td a{
+		color:#198ac5;
+	}
+
+		div#right-column table.film-times td a:visited{
+			color:#f16d9a;
+		}
+
+		div#right-column table.film-times td a:hover{
+			color:#7ac143;
+		}
+
+
+/* 40 Photos
+=========================================================================================== */
+ul#gallery-thumb-list{
+    margin: 0px;
+    padding: 0px;
+}
+	ul#gallery-thumb-list li {
+		display: inline;/*fixes ie - removed float:left and changed "block" to "inline"*/
+		list-style: none;
+		margin:0px 2px 5px 0px;
+		padding:0px;
+	}
+
+/* VIMEO
+=========================================================================================== */
+ul.vimeo {
+	list-style:none;
+	margin:20px 0px;
+	padding:0px;
+}
+
+	ul.vimeo li{
+		float:left;
+		width:215px;
+		padding-left:20px;
+	}
+	
+	ul.vimeo li p{
+		margin-top:0px;
+	}
+	
+	/*specific to vimeo video list item*/
+	ul.vimeo li.vimeo-video{
+		width:500px;
+		padding-left:0px;
+	}
+
+/* JQUERY CALENDAR (DATEPICKER)
+=========================================================================================== */
+div#datepicker{
+	width:220px;
+}
+
+div#right-column div#datepicker{
+	margin:0px -10px 0px !important;
+}
+
+/* JQUERY TABBED INFORMATION (TABS)
+=========================================================================================== */
+
+/*tabs box surround change bg .box from white*/
+.box.bgtabs{
+	clear:both;
+	background:#04253e;
+	margin:0px !important;
+}
+
+ul.tabs{
+	float:right;
+	clear:both;
+	list-style:none;
+	background:#074b7e;
+	padding:0px !important;
+	margin:0px !important;
+	-moz-border-radius-topleft: 10px;
+	-moz-border-radius-topright: 10px;
+	-webkit-border-radius-top-left: 10px;
+	-webkit-border-radius-top-right: 10px;
+	border-radius-top-left: 10px;
+	border-radius-top-right: 10px;
+}
+	ul.tabs li{
+		float:left;
+		display:block;
+		/*width:125px;CC IE6*/
+		height:40px;
+		text-align:center;
+		padding:0px !important;
+		margin:0px !important;
+	}
+	
+		ul.tabs li a,
+		ul.tabs li a:visited{
+			display:block;
+			height:40px;
+			color:#ffffff;
+			font-weight:bold;
+			text-decoration:none;
+			background:#074b7e;
+			padding:10px 15px;
+			margin:0px !important;
+			-moz-border-radius-topleft: 10px;
+			-moz-border-radius-topright: 10px;
+			-webkit-border-radius-top-left: 10px;
+			-webkit-border-radius-top-right: 10px;
+		}
+	
+		
+		ul.tabs li a:hover,
+		ul.tabs li.onstate a{
+			background:#04253e;
+			-moz-border-radius-topleft: 10px;
+			-moz-border-radius-topright: 10px;
+			-webkit-border-radius-top-left: 10px;
+			-webkit-border-radius-top-right: 10px;
+			border-radius-top-left: 10px;
+			border-radius-top-right: 10px;
+		}
+
+/*pane showing data*/
+ul.panes{
+	list-style:none;
+	margin:0px !important;
+	padding:0px !important;
+}
+	ul.panes li h2{
+		color:#fdb924 !important;
+		border-bottom:5px solid #b1005d;
+		padding:0px 10px 10px 20px !important;
+	}
+	
+	ul.panes li div.pane-content{
+		background:#fff;
+		padding:20px;
+	}
+	
+	ul.panes li div.pane-content ul.yellow-list{
+		margin:10px 0px;
+	}
+
+/* JQUERY PRICING (HOVER FOR TICKET BOOKINGS - GIVES COSTING)
+=========================================================================================== */
+
+div.pricing{
+	position:relative;
+	z-index:1;
+	width:300px;
+	padding:6px;
+}
+	div.pricing img.pointer{
+		position:absolute;
+		z-index:100;
+		top:-16px;
+		left:40px;
+		width:21;
+		height:16;
+	}
+	
+	div.pricing .box{
+		padding-bottom:0px !important;
+		border:1px solid #ccc;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		border-radius: 5px;
+	}
+
+ul.price-list{
+	float:none;
+	clear:both;
+	width:300px;
+	list-style:none;
+	margin:0px -10px 0px !important;
+	padding:20px 0px 0px;
+}
+		
+		ul.price-list li{
+			padding:0px 10px;
+		}
+		
+		ul.price-list li span{
+			float:right;
+		}
+		
+		ul.price-list li.group{
+			margin-bottom:0px !important;
+		}
+		
+		ul.price-list li p.group-booking{
+			/*zoom:1;CC IE6*/
+			margin:0px -10px;
+			border:1px solid #000;
+			border-top:0px;
+			-moz-border-radius-bottomleft: 5px;
+			-moz-border-radius-bottomright: 5px;
+			-webkit-border-radius-bottom-left: 5px;
+			-webkit-border-radius-bottom-right: 5px;
+			border-radius-bottom-left: 5px;
+			border-radius-bottom-right: 5px;
+		}
+		
+		
+/* JQUERY SHOW/HIDE for whats on, film pages
+=========================================================================================== */
+
+h2.whatson-title{
+	background:#da9f1f url(/img/NMeM/layout/bg_title_tickets.jpg) repeat-x;
+	padding:8px 20px;
+	margin:10px -20px 5px;
+}
+	h2.whatson-title span{
+		position:relative;
+		float:right;
+		display:inline-block;
+		margin:-8px -28px -8px 10px;
+	}
+	
+	h2.whatson-title span a{
+		display:block;
+		font-size:75%;
+		font-weight:normal;
+		text-align:right;
+		background:url(/img/NMeM/layout/bg_tickets_off.png) top right no-repeat;
+		padding:8px 42px 8px 18px;
+	}
+	
+	
+	h2.whatson-title span a:visited{
+		background:url(/img/NMeM/layout/bg_tickets_off.png) top right no-repeat;
+	}
+	
+	h2.whatson-title span a:hover,
+	h2.whatson-title.onstate span a{
+		background:url(/img/NMeM/layout/bg_tickets_on.png) top right no-repeat;
+	}
+	
+ul.whatson-info{
+	list-style:none;
+	width:780px;
+	margin:10px 0px;
+	padding:0px;
+}
+	ul.whatson-info li{
+		float:left;
+		display:inline;
+		width:360px;
+		margin-right:20px;
+		padding-bottom:5px;
+	}
+	
+	ul.whatson-info li.end{
+		margin-right:0px;
+	}
+	
+	ul.whatson-info li img{
+		float:left;
+		/*display:inline;CC IE6*/
+		margin:0px 10px 10px 0px;
+	}
+	
+	ul.whatson-info li h3{
+		font-family:Arial, Helvetica, sans-serif !important;
+		font-size:130%;
+		color:#198ac5;
+		line-height:130%;
+	}
+	
+/* JQUERY CAROUSEL
+=========================================================================================== */
+/*carousel*/
+.shadow .carousel {
+	margin-right:0px;
+}
+
+ul#carousel{
+	position:relative;
+	width:540px;
+	height:265px;
+	list-style:none;
+	margin:-20px;
+	margin-top: 10px;
+	padding:0px;
+}
+
+#container.homepage * ul#carousel{
+    width:940px;
+	height:365px;
+	margin:0px;
+	-moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);
+	-webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);
+	overflow: hidden;
+}
+	
+	ul#carousel li{
+		position:relative;
+		float:left;
+		display: none;
+		height:100%;
+		top: 0px;
+		background-repeat: no-repeat;
+		background-color: Black;
+		background-position: center;
+	}
+	    
+	    ul#carousel li.first{
+	        display: block !important;
+	    }
+	    
+		ul#carousel li a{
+			color:#FFF;
+			text-decoration:none;
+		}
+		
+		ul#carousel li a:hover{
+			color:#f16d9a;
+		}
+		
+	/*open main LI img*/
+	ul#carousel li.open{
+		width: 100%;
+	}
+		
+    ul#carousel li.closed{
+        width: 45px;
+        background-position: center;
+        overflow: hidden;
+	}
+	
+	/*opaque banner with text*/
+	ul#carousel li div.carousel-info{
+		position:absolute;
+		display:block;
+		z-index:2;
+		left:0px;
+		bottom:0px;
+		width: 540px;
+		/*opacity:0.8;
+		filter:alpha(opacity=80);*/
+		/*background:#000;CC IE6*/
+		background:transparent url(/img/NMeM/layout/carousel/bg_carousel.png) repeat;
+		padding:20px 0px 20px 0px;
+	}
+	
+	#container.homepage * ul#carousel li div.carousel-info{
+	    width:940px;
+	}
+	
+		ul#carousel li div.carousel-info img.arrow{
+			position:absolute;
+			top:25px;
+			left:10px;
+			width:25px;
+			height:39px;
+			background: url(/img/NMeM/layout/carousel/arrow.gif) 0px 0px no-repeat;
+			
+		}
+		ul#carousel li:hover div.carousel-info img.arrow{
+			background: url(/img/NMeM/layout/carousel/arrow_on.gif) 0px 0px no-repeat;
+		}
+		
+		ul#carousel li div.carousel-info p{
+			margin-top:5px;
+			margin-left: 48px;
+			margin-bottom:0;
+		}
+		
+		ul#carousel li div.carousel-info h2{
+		    margin-left: 48px;
+		}
+
+/* slide carousel */
+.slide-carousel { list-style:none; padding: 0px; margin: 0; }
+.slide-carousel li { position: relative; background: #000; overflow: hidden; }
+.slide-carousel .handle { z-index: 3; cursor: pointer; width: 60px; position: absolute; top: 0; left: 0; background: transparent url(/img/NMeM/layout/carousel/Arrow.png) 15px 314px no-repeat; 
+} 
+.slide-carousel li:hover .handle { background-position: -160px 314px; }
+
+.slide-carousel .carousel-info { position: absolute; z-index: 2; left: 0px; bottom: -1px; padding:10px 0 0 0; background: transparent url(/img/NMeM/layout/carousel/bg_carousel.png) 0 0 repeat; 
+}
+.slide-carousel .carousel-info a { text-decoration: none; color: #fff; }
+.slide-carousel .carousel-info:hover { cursor: pointer; }
+.slide-carousel .carousel-info:hover h2 a { color: #b1005d; } 
+.slide-carousel .carousel-info h2 { margin-bottom: 0 !important; padding-left: 60px; }
+.slide-carousel .carousel-info h2 a { font-size: 75%; }
+.slide-carousel .carousel-info p { margin: 0 !important; padding-left: 60px; }
+
+/* homepage carousel */
+#HomepageCarousel {  width: 940px; }
+#HomepageCarousel li {  height: 365px; margin-bottom: 20px; width: 940px; }
+#HomepageCarousel .handle { height: 365px; }
+#HomepageCarousel .carousel-info { height: 55px; width: 940px; }
+
+.promo-carousel { height: 1%; }
+.promo-carousel:after { clear: both; content: "."; display: block; height: 0; visibility: hidden; }
+
+
+/* film carousel */
+.film-carousel { width: 540px; }
+.film-carousel li {  height: 265px; margin-bottom: 20px; width: 540px; }
+.film-carousel .handle { height: 265px; background-position: 15px 214px; }
+.film-carousel li:hover .handle { background-position: -160px 214px; }
+.film-carousel .carousel-info { height: 55px; width: 540px; }
+
+/* film page overide - */
+.film .box.w540-20px { width: 540px; padding: 20px 0; }
+.film .box h1 { padding: 0 20px; }
+.film .box #contentplaceholder_0_SharePanel { padding: 0 20px;}
+
+
+/* simple image carousel */
+.pane-content { height: 1%; }
+.pane-content:after { clear: both; content: "."; display: block; height: 0; visibility: hidden; }
+.content-container { width: 243px; float: left; }
+.image-container { width: 438px; float: right;}
+.simple-image-carousel { list-style: none; margin: 0; padding: 0; width: 438px; }
+.simple-image-carousel li { width: 438px; height: 299px; }
+
+.carousel-info{
+	background:#000;
+}
+
+   a.stbar.chicklet img {border:0;height:16px;width:16px;margin-right:3px;vertical-align:middle;}
+        a.stbar.chicklet {height:16px;line-height:16px;}
+
+/* richard bad css */
+#explorer{
+margin: 0 0 0 20px;
+}
