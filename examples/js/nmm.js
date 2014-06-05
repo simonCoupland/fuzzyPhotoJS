@@ -78,7 +78,7 @@ function NMMFormattedString(m_groupIndex, m_linkArray, m_linkCount)
 		var l_title = m_linkArray[i].title;
 		if(l_title.length > l_clipLength) l_title = l_title.substr(0,l_clipLength-1) + "...";
 		if(l_title.length == 0) l_title = "No known title";
-		
+
 		var l_person = m_linkArray[i].person;
 		if(l_person.length > l_clipLength) l_person = l_person.substr(0,l_clipLength-1) + "...";
 		if(l_person.length == 0) l_person = "Photographer not known";

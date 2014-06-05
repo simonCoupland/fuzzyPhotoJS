@@ -1,6 +1,6 @@
 // Returns a jqXHR object which is response from a request for an XML file which contains the links associated with an object within an institution
 
-// Institution ID is an internal number which accesses you institutions data
+// Institution ID is an internal number which accesses your institutions data
 // 0: ERPS
 // 1: British Library
 // 2: Musee D'Orsay
@@ -61,13 +61,16 @@ function FPXmlToJSON(m_xmlData)
 				// For each match found extract source, title and the url
 				var m_source = $(this).attr("source");
 				var m_title = $(this).find("title").text();
+				var m_person = $(this).find("person").text();
 				var m_url = $(this).find("url").text();
+				
 
 				// Add to the correct JSON string
 				if(m_type == "balanced")
 				{
 					m_allFieldsStr += "{ \"title\":\"" + m_title + "\", ";
 					m_allFieldsStr += "\"source\":\"" + m_source + "\", ";
+					m_allFieldsStr += "\"person\":\"" + m_person + "\", ";
 					m_allFieldsStr += "\"url\":\"" + m_url + "\" } , ";
 					m_linkCounts[0]++;
 				}
@@ -75,6 +78,7 @@ function FPXmlToJSON(m_xmlData)
 				{
 					m_titleStr += "{ \"title\":\"" + m_title + "\", ";
 					m_titleStr += "\"source\":\"" + m_source + "\", ";
+					m_titleStr += "\"person\":\"" + m_person + "\", ";
 					m_titleStr += "\"url\":\"" + m_url + "\" } , ";
 					m_linkCounts[1]++;
 				}
@@ -82,6 +86,7 @@ function FPXmlToJSON(m_xmlData)
 				{
 					m_personStr += "{ \"title\":\"" + m_title + "\", ";
 					m_personStr += "\"source\":\"" + m_source + "\", ";
+					m_personStr += "\"person\":\"" + m_person + "\", ";
 					m_personStr += "\"url\":\"" + m_url + "\" } , ";
 					m_linkCounts[2]++;
 				}
