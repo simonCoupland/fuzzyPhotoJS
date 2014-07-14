@@ -71,7 +71,6 @@
 	display: block;
 	text-indent: -99999px;
 	overflow: hidden;
-	background-repeat: no-repeat;
 }
 
 
@@ -92,10 +91,30 @@
 	position: relative;
 	margin-top: 2px;
 	padding: 0.5em 0.5em .5em 0em;
+	padding-left:15px;
 	min-height: 0; /* support: IE7 */
 	font-size: 160%;
+	background: red;
 }
 
+#FP{
+padding:0px;
+margin:0px;
+}
+
+#FP h3 {
+background: url('http://www.nationalmediamuseum.org.uk/img/NMeM/layout/bg_title_tickets.jpg') repeat-x scroll 0% 0% #DA9F1F;
+padding-top:6px;
+padding-left:30px;
+
+}
+
+#FP img {
+float:right;
+margin-top:-6px;
+margin-right:-18px;
+}
+	
 .ui-accordion .ui-accordion-content {
 	padding: 0em 0em;
 	border-top: 0;
@@ -180,10 +199,8 @@
 .ui-state-default,
 .ui-widget-content .ui-state-default,
 .ui-widget-header .ui-state-default {
-	background:#FFFFFF url(FPArrow.png) 100% 100% no-repeat;
 	font-weight: bold;
 	color: #198AC5;
-	border-right: 20px solid white;
 }
 
 .ui-state-hover,
@@ -192,17 +209,13 @@
 .ui-state-focus,
 .ui-widget-content .ui-state-focus,
 .ui-widget-header .ui-state-focus {
-	background:#FFFFFF url(FPArrow.png) 100% 100% no-repeat;
 	font-weight: bold;
 	color: #198AC5;
-	border-right: 20px solid white;
 }
 
 .ui-state-active,
 .ui-widget-content .ui-state-active,
 .ui-widget-header .ui-state-active {
-	background:#FFFFFF url(FPArrow2.png) 100% 100% no-repeat;
 	font-weight: bold;
 	color: #198AC5;
-	border-right: 10px solid white;
 }

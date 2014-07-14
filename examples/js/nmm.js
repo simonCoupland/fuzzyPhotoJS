@@ -18,7 +18,25 @@ function initFP(m_id)
 	  if(g_records.linksFound)
 	  {
 		 // add an accordian widget to the page
-		 $(".collection-image-show").append("<li style='clear:both;width:100%;'><div id='FP'><h3>View similar items in other collections</h3><div><p></p></div></div></li>");
+		 $(".collection-image-show").append("<li style='clear:both;width:100%;'><div id='FP'><h3>View similar items in other collections <img id='FParrow' src='http://www.nationalmediamuseum.org.uk/img/NMeM/layout/bg_tickets_off.png'></h3><div><p></p></div></div></li>");
+		 // Make some tweaks to change the arrow picture
+		$('#FP h3').on({'click': function() {
+			var currentSrc = $("#FParrow").attr("src");
+			
+			if (currentSrc.indexOf("bg_tickets_off.png") >= 0)
+			{
+				$("#FParrow").attr("src","nmm/bg_tickets_on.png");
+				$("#FParrow").css("margin-top", "-6px");
+				$("#FParrow").css("margin-right", "-10px");
+			}
+			else
+			{
+				$("#FParrow").attr("src","http://www.nationalmediamuseum.org.uk/img/NMeM/layout/bg_tickets_off.png");
+				$("#FParrow").css("margin-top", "-6px");
+				$("#FParrow").css("margin-right", "-18px");
+			}
+		}
+		});
 		 // add the content 
 		 $(".collection-image-show p").append("<div style='text-align:right;padding-right:20px;padding-top:10px;'>Ordered by:<select onchange=\"updateFP(0);\"></select></div>");
 		
@@ -94,15 +112,15 @@ function NMMFormattedString(m_groupIndex, m_linkArray, m_linkCount)
 		// Write first two links
 		l_str += "</div><div style='text-align:center'>View more: ";
 		if(m_groupIndex == 0) {l_str += "1, ";}
-		else {{l_str += "<a onClick='updateFP(0);'>1</a>, ";}}
+		else {{l_str += "<a onClick='updateFP(0);' style='cursor:pointer;'>1</a>, ";}}
 		if(m_groupIndex == 1) {l_str += "2";}
-		else {{l_str += "<a onClick='updateFP(1);'>2</a>";}}
+		else {{l_str += "<a onClick='updateFP(1);'  style='cursor:pointer;'>2</a>";}}
 		
 		// Check if we need to write a third link
 		if(m_linkArray.length > 20)
 		{
 			if(m_groupIndex == 2) {l_str += ", 3";}
-			else {{l_str += ", <a onClick='updateFP(2);'>3</a>";}}
+			else {{l_str += ", <a onClick='updateFP(2);'  style='cursor:pointer;'>3</a>";}}
 		}
 		l_str += "</div>";
 	}
@@ -123,6 +141,8 @@ function updateFP(m_groupIndex)
 	if(m_active == "Title") $( "#FP_title" ).html(NMMFormattedString(m_groupIndex, g_records.title, g_records.linkCounts[1]));
 	if(m_active == "Person") $( "#FP_person" ).html(NMMFormattedString(m_groupIndex, g_records.person, g_records.linkCounts[2]));
 }
+
+
 
 
 
