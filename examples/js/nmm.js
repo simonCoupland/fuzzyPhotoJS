@@ -18,7 +18,7 @@ function initFP(m_id)
 	  if(g_records.linksFound)
 	  {
 		 // add an accordian widget to the page
-		 $(".collection-image-show").append("<li style='clear:both;width:100%;'><div id='FP'><h3>View similar items in other collections <img id='FParrow' src='http://www.nationalmediamuseum.org.uk/img/NMeM/layout/bg_tickets_off.png'> <a href='#' title='tooltip text'><img id='FPlogo' src='nmm/FPlogo.png'></a> </h3><div><p></p></div></div></li>");
+		 $(".collection-image-show").append("<li style='clear:both;width:100%;'><div id='FP'><h3>View similar items in other collections <img id='FParrow' src='http://www.nationalmediamuseum.org.uk/img/NMeM/layout/bg_tickets_off.png'> <a href='#' title='Similar photographs from a range of museums.'><img id='FPlogo' src='nmm/FPlogo.png'></a> </h3><div><p></p></div></div></li>");
 		 // Make some tweaks to change the arrow picture
 		$('#FP h3').on({'click': function() {
 			var currentSrc = $("#FParrow").attr("src");
