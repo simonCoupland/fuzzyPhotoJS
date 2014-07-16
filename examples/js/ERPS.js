@@ -19,7 +19,7 @@ function initFP(m_id)
 	  if(g_records.linksFound)
 	  {
 		 // add a link on the page to the modal window
-		 $("#content dl").append("<dt>Links:</dt><dd>Click <span onclick='showFP();' style='text-decoration:underline;cursor:pointer;'>here</span> to view similar items from a range of collections.</dd>");
+		 $("#content dl").append("<dt>Links:</dt><dd>Click <span onclick='showFP();' style='text-decoration:underline;cursor:pointer;'>here</span> to view similar items from a range of collections.<a href='#' title='tooltip text'><img id='FPlogo' src='erps/FPlogo.png'></a></dd>");
 		 
 		 // add the content of the modal window
 		 $("#FPTabbedModalContent").append("<ul></ul>");

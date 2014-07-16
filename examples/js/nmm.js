@@ -18,7 +18,7 @@ function initFP(m_id)
 	  if(g_records.linksFound)
 	  {
 		 // add an accordian widget to the page
-		 $(".collection-image-show").append("<li style='clear:both;width:100%;'><div id='FP'><h3>View similar items in other collections <img id='FParrow' src='http://www.nationalmediamuseum.org.uk/img/NMeM/layout/bg_tickets_off.png'></h3><div><p></p></div></div></li>");
+		 $(".collection-image-show").append("<li style='clear:both;width:100%;'><div id='FP'><h3>View similar items in other collections <img id='FParrow' src='http://www.nationalmediamuseum.org.uk/img/NMeM/layout/bg_tickets_off.png'> <a href='#' title='tooltip text'><img id='FPlogo' src='nmm/FPlogo.png'></a> </h3><div><p></p></div></div></li>");
 		 // Make some tweaks to change the arrow picture
 		$('#FP h3').on({'click': function() {
 			var currentSrc = $("#FParrow").attr("src");
@@ -28,12 +28,14 @@ function initFP(m_id)
 				$("#FParrow").attr("src","nmm/bg_tickets_on.png");
 				$("#FParrow").css("margin-top", "-6px");
 				$("#FParrow").css("margin-right", "-10px");
+				$("#FPlogo").css("margin-right", "9px");
 			}
 			else
 			{
 				$("#FParrow").attr("src","http://www.nationalmediamuseum.org.uk/img/NMeM/layout/bg_tickets_off.png");
 				$("#FParrow").css("margin-top", "-6px");
 				$("#FParrow").css("margin-right", "-18px");
+				$("#FPlogo").css("margin-right", "30px");
 			}
 		}
 		});
@@ -76,6 +78,10 @@ function initFP(m_id)
 		 
 		 // Render the expandable element
 		 $("#FP").accordion({collapsible: true, active: false });
+		 // Render the tooltips
+		 $(function() {
+			$( document ).tooltip();
+		 });
 	  }
 	}
 };
