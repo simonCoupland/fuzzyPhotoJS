@@ -18,7 +18,11 @@ function initFP(m_id)
 	  if(g_records.linksFound)
 	  {
 		 // add an accordian widget to the page
-		 $(".collection-image-show").append("<li style='clear:both;width:100%;'><div id='FP'><h3>View similar items in other collections <img id='FParrow' src='http://www.nationalmediamuseum.org.uk/img/NMeM/layout/bg_tickets_off.png'> <a href='#' title='Similar photographs from a range of museums.'><img id='FPlogo' src='nmm/FPlogo.png'></a> </h3><div><p></p></div></div></li>");
+		 $(".collection-image-show").append("<li style='clear:both;width:100%;'><div id='FP'><h3>View similar items in other collections <img id='FParrow' src='http://www.nationalmediamuseum.org.uk/img/NMeM/layout/bg_tickets_off.png'> <a onclick='window.open(http://fuzzyphoto.edublogs.org/,'_blank');return false;' title='Similar photographs from a range of museums.'><img id='FPlogo' class='FPlogo' src='nmm/FPlogo.png'></a> </h3><div><p></p></div></div></li>");
+		 $('.FPlogo').on({'click': function() {
+			window.open('http://fuzzyphoto.edublogs.org/', '_blank');
+		}
+		});
 		 // Make some tweaks to change the arrow picture
 		$('#FP h3').on({'click': function() {
 			var currentSrc = $("#FParrow").attr("src");
@@ -39,6 +43,7 @@ function initFP(m_id)
 			}
 		}
 		});
+		
 		 // add the content 
 		 $(".collection-image-show p").append("<div style='text-align:right;padding-right:20px;padding-top:10px;'>Ordered by:<select onchange=\"updateFP(0);\"></select></div>");
 		
