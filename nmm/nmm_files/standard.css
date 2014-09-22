@@ -1,0 +1,787 @@
+﻿@charset "utf-8";
+@import url(reset.css);
+
+/* ========================================================================================
+NMM 
+Version:1.0
+Author: L Kennedy-Murray
+=========================================================================================== */
+
+body{
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:75%;
+	color:#2f2f2e;
+	text-align:center;
+	background:url(/img/NMeM/layout/bg_body.jpg) repeat-y scroll center top #031931;
+	margin:0px;
+	padding:0px;
+}
+table{font-size:100%;}
+
+a{
+	color:#198ac5;
+	text-decoration:underline;
+}
+
+a:visited{
+	color:#f16d9a;
+}
+
+a:hover{
+	color:#7ac143;
+}
+
+a:active, a:focus{
+	color:#000000;
+	background-color:#fdb924;
+}
+
+.hide,
+.skip
+{
+	position:absolute;
+	text-indent:-10000px;
+	top:auto;
+	width:1px !important;
+	height:1px !important;
+	overflow:hidden;
+}
+	/*skip links*/
+	a.skip{
+		color:#FFF;
+	}
+		/*bring skip nav link in to focus when tabbed*/
+		a.skip:focus,
+		a.skip:active{
+			position:static; 
+			width:auto; 
+			height:auto;
+			text-indent:0px;
+		}
+
+/*clear floated div elements - generally only works on DIV*/
+.clear-float:after{
+    content: "."; 
+    display: block; 
+    height: 0; 
+    font-size:0;
+	float:none;	
+    clear: both; 
+    visibility:hidden;
+}
+	
+	/*CC IE6
+	.clear-float{
+		height:1%;
+	}*/
+	
+	/*CC IE7
+	.clear-float{
+		min-height:1%;
+	}*/
+
+
+/*clears anything leaving no gap*/
+.clear{
+	float:none;
+	clear:both;
+	height:0px;
+	line-height:0px;
+	font-size:0px;
+}
+/*clear anything leaving a gap*/
+.clearheight{
+	float:none;
+	clear:both;
+}
+
+/* TOP HEADER - BOX OFFICE & SEARCH
+=========================================================================================== */
+div#topheader-container{
+	height:48px;
+	background:#010204;
+}
+
+div#topheader{
+	width:940px;
+	font-family:Arial, Helvetica, sans-serif;
+	text-align:left;
+	margin:0px auto;
+}
+	div#topheader p{
+		float:left;
+		/*display:inline;cc ie6*/
+		color:#FFF;
+		margin:15px 0px 0px 18px;
+	}
+	
+	div#topheader p strong{
+		color:#FFCC00;
+	}
+	
+	div.search{
+		float:right;
+		/*display:inline;cc ie6*/
+		margin:13px 22px 0px;
+	}
+	
+		div.search img{
+			vertical-align:middle;
+		}
+		
+		div.search input.text{
+			width:140px;
+			height:13px;
+			color:#a4a4a4;
+			background:#FFF url(/img/NMeM/layout/bg_input_search_newsletter.gif) no-repeat;
+			border:none;
+			margin:0px;
+			padding:4px;/*jane - was 2px 4px*/
+			vertical-align:middle;
+		}
+			div.search input.text:focus,
+			div.search input.text:active{
+				color:#000;
+				background:#fce8ac url(/img/NMeM/layout/bg_input_search_newsletter_focus.gif) no-repeat;
+			}
+		
+		div.search input.submit{
+			margin:0px;
+			padding:0px;
+			vertical-align:middle;
+		}
+
+/* HEADER - LOGO & NAV
+=========================================================================================== */
+div#header-container{
+	background:#0b385f url(/img/NMeM/layout/bg_header.png) center no-repeat;
+	height:106px;
+}
+
+div#header{
+	width:940px;
+	font-family:Arial, Helvetica, sans-serif;
+	text-align:left;
+	margin:0px auto;
+}
+	div#header span.logo{
+		float:left;
+		/*display:inline;cc ie6*/
+		width:156px;
+		height:64px;
+		background:url(/img/NMeM/layout/logos/nmm.gif) no-repeat;
+		margin:22px 60px 0px 18px;
+	}
+		/*black/white version for print*/
+		div#header span.logo img{
+			display:block;
+			width:0px;
+		}
+	
+	div#header ul{
+		float:left;
+		list-style:none;
+		margin:0px;
+		padding:0px;
+	}
+		div#header ul li{
+			position:relative;
+			float:left;
+			display:block;
+		}
+		
+		div#header ul li a{
+			color:#FFF;
+			font-weight:bold;
+			text-decoration:none;
+		}
+		
+		div#header ul li a:active,
+		div#header ul li a:focus{
+			background-color:transparent;
+		}
+		
+		/*home*/
+			div#header ul li.home{
+				z-index:8;
+				overflow:hidden;
+				width:84px;
+				height:106px;
+			}
+				div#header ul li.home img{
+					background:url(/img/NMeM/layout/nav/home.gif) 0 0 no-repeat;
+					width:84px;
+					height:106px;
+				}
+				
+				div#header ul li.home a:hover img{
+					background:url(/img/NMeM/layout/nav/home.gif) 0 -212px no-repeat;	
+				}
+				
+				div#header ul li.home.home-on img{
+					background:url(/img/NMeM/layout/nav/home.gif) 0 -106px no-repeat;	
+				}
+				
+		/*plan a visit*/
+			div#header ul li.planavisit{
+				z-index:7;
+				overflow:hidden;
+				width:122px;
+				height:106px;
+				margin-left:-21px;
+			}
+				div#header ul li.planavisit img{
+					background:url(/img/NMeM/layout/nav/plan_a_visit.gif) no-repeat;
+					width:122px;
+					height:106px;
+				}
+				
+				div#header ul li.planavisit a:hover img{
+					background:url(/img/NMeM/layout/nav/plan_a_visit.gif) left -212px no-repeat;	
+				}
+				
+				div#header ul li.planavisit.planavisit-on img{
+					background:url(/img/NMeM/layout/nav/plan_a_visit.gif) 0 -106px no-repeat;	
+				}
+		
+		/*film*/
+			div#header ul li.film{
+				z-index:6;
+				overflow:hidden;
+				width:84px;
+				height:106px;
+				margin-left:-21px;
+			}
+				div#header ul li.film img{
+					background:url(/img/NMeM/layout/nav/film.gif) no-repeat;
+					width:84px;
+					height:106px;
+				}
+				
+				div#header ul li.film a:hover img{
+					background:url(/img/NMeM/layout/nav/film.gif) left -212px no-repeat;	
+				}
+				
+				div#header ul li.film.film-on img{
+					background:url(/img/NMeM/layout/nav/film.gif) 0 -106px no-repeat;	
+				}
+				
+		/*collections*/
+			div#header ul li.collections{
+				z-index:6;
+				overflow:hidden;
+				width:121px;
+				height:106px;
+				margin-left:-21px;
+			}
+				div#header ul li.collections img{
+					background:url(/img/NMeM/layout/nav/collections.gif) no-repeat;
+					width:121px;
+					height:106px;
+				}
+				
+				div#header ul li.collections a:hover img{
+					background:url(/img/NMeM/layout/nav/collections.gif) left -212px no-repeat;	
+				}
+				
+				div#header ul li.collections.collections-on img{
+					background:url(/img/NMeM/layout/nav/collections.gif) 0 -106px no-repeat;	
+				}
+		
+		/*educators*/
+			div#header ul li.educators{
+				z-index:6;
+				overflow:hidden;
+				width:116px;
+				height:106px;
+				margin-left:-21px;
+			}
+				div#header ul li.educators img{
+					background:url(/img/NMeM/layout/nav/educators.gif) no-repeat;
+					width:116px;
+					height:106px;
+				}
+				
+				div#header ul li.educators a:hover img{
+					background:url(/img/NMeM/layout/nav/educators.gif) left -212px no-repeat;	
+				}
+				
+				div#header ul li.educators.educators-on img{
+					background:url(/img/NMeM/layout/nav/educators.gif) 0 -106px no-repeat;	
+				}
+		
+		/*about us*/
+			div#header ul li.aboutus{
+				z-index:6;
+				overflow:hidden;
+				width:108px;
+				height:106px;
+				margin-left:-21px;
+			}
+				div#header ul li.aboutus img{
+					background:url(/img/NMeM/layout/nav/about_us.gif) no-repeat;
+					width:108px;
+					height:106px;
+				}
+				
+				div#header ul li.aboutus a:hover img{
+					background:url(/img/NMeM/layout/nav/about_us.gif) left -212px no-repeat;	
+				}
+				
+				div#header ul li.aboutus.aboutus-on img{
+					background:url(/img/NMeM/layout/nav/about_us.gif) 0 -106px no-repeat;	
+				}
+		
+		/*shop*/
+			div#header ul li.shop{
+				z-index:6;
+				overflow:hidden;
+				width:81px;
+				height:106px;
+				margin-left:-21px;
+			}
+				div#header ul li.shop img{
+					background:url(/img/NMeM/layout/nav/shop.gif) no-repeat;
+					width:81px;
+					height:106px;
+				}
+				
+				div#header ul li.shop a:hover img{
+					background:url(/img/NMeM/layout/nav/shop.gif) left -212px no-repeat;	
+				}
+				
+				div#header ul li.shop.shop-on img{
+					background:url(/img/NMeM/layout/nav/shop.gif) 0 -106px no-repeat;	
+				}
+		
+		/*get involved*/
+			div#header ul li.getinvolved{
+				z-index:6;
+				overflow:hidden;
+				width:127px;
+				height:106px;
+				margin-left:-21px;
+			}
+				div#header ul li.getinvolved img{
+					background:url(/img/NMeM/layout/nav/get_involved.gif) no-repeat;
+					width:127px;
+					height:106px;
+				}
+				
+				div#header ul li.getinvolved a:hover img{
+					background:url(/img/NMeM/layout/nav/get_involved.gif) left -212px no-repeat;	
+				}
+				
+				div#header ul li.getinvolved.getinvolved-on img{
+					background:url(/img/NMeM/layout/nav/get_involved.gif) 0 -106px no-repeat;	
+				}
+
+
+/* CONTENT CONTAINER FOR 1/2/3 COLUMN LAYOUTS 
+=========================================================================================== */
+div#container{
+	width:940px;
+	text-align:left;
+	margin:0px auto;
+	padding:40px 10px 60px;
+}
+
+div#left-column{
+	position:relative;
+	float:left;
+	font-family:Arial, Helvetica, sans-serif;
+	width:140px;
+}
+
+div#middle-column{
+	position:relative;
+	float:left;
+	width:540px;
+	padding:0px 20px;
+}
+
+div#right-column{
+	position:relative;
+	float:right;
+	font-family:Arial, Helvetica, sans-serif;
+	width:220px;
+}
+
+/* LEFT NAV
+=========================================================================================== */
+div#left-nav{
+	position:relative;
+	float:left;
+	width:140px;
+	background:#332403;
+	padding:5px 0px;
+	margin-bottom:20px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+	div#left-nav ul{
+		width:140px;
+		list-style:none;
+		margin:0px;
+		padding:0px;
+		margin-right:-12px;
+	}
+	
+	div#left-nav ul li{
+		margin-bottom:-3px;
+	}
+	
+	div#left-nav ul li a{
+		position:relative;
+		z-index:600;
+		display:block;
+		width:120px;
+		/*height:14px;cc ie6*/
+		min-height:14px;
+		max-height:200px;
+		color:#FFF;
+		text-decoration:none;
+		padding:8px 16px 17px;
+	}
+	
+		div#left-nav ul li a:hover{
+			color:#332403;
+		}
+		
+		div#left-nav ul li a:active,
+		div#left-nav ul li a:focus{
+			background-color:transparent;
+		}
+		
+	div#left-nav ul li a span{
+		position:relative;
+		z-index:550;
+		display:block;
+		margin:0px;
+		padding:0px;
+	}
+	
+	div#left-nav ul li a img{
+		position:absolute;
+		z-index:500;
+		top:-9000px;
+		left:-9000px;
+		width:100%;
+		height:100%;
+		border:none;
+	}
+	
+	div#left-nav ul li a:visited{
+		background:none;
+	}
+
+	div#left-nav ul li a:hover img
+	{
+		top:0px;
+		left:0px;
+		zoom:1;/*DO NOT REMOVE REQUIRED FOR IE7*/
+	}
+	
+	div#left-nav ul li a.onstate{
+		color:#332403;
+		font-weight:bold;
+	}
+	
+	div#left-nav ul li a.onstate img{
+		top:0px;
+		left:0px;
+	}
+	
+	/*CC IE7 -  DOES NOT LIKE ONSTATE, STRETCHES SO MUST REMOVE IMAGE AND USE BG
+	div#left-nav ul li a.onstate img{
+		display:none;
+	}
+	div#left-nav ul li a.onstate{
+		cursor:pointer;
+	filter:progid:DXimageTransform.Microsoft.AlphaimageLoader(src='/img/NMeM/layout/bg_nav.png',sizingMethod='scale'); 
+	}*/
+	
+		/*sub sub nav*/
+		div#left-nav ul ul{
+			z-index:700;
+			width:auto !important;
+			margin:0px 0px 10px 25px !important;
+		}
+		
+			div#left-nav ul ul li{
+				width:auto;
+				padding:0px 5px 15px 0px;
+			}
+			
+			div#left-nav ul ul li a{
+				position:relative;
+				display:block;
+				float:none;
+				clear:none;
+				width:auto;
+				height:auto;
+				padding:0px;
+			}
+			
+			div#left-nav ul ul li a:hover{
+				color:#fdb924;
+			}
+			
+			div#left-nav ul ul li a.onstate{
+				color:#fdb924;
+				font-weight:bold;
+			}
+			
+			div#left-nav ul ul li a:active,
+			div#left-nav ul ul li a:focus{
+				color:#000000;
+				background-color:#fdb924;
+			}
+			
+			
+			/*CC IE7 - REMOVE FILER FROM SUB NAV ONSTATE
+			div#left-nav ul ul li a.onstate{
+				filter:none;
+			}*/
+
+/* SHARE LINK
+=========================================================================================== */
+div#contentplaceholder_0_SharePanel{
+	display:block;
+	padding:30px 0px 10px;
+}
+
+/* FOOTER
+=========================================================================================== */
+div#footer-container{
+	background:#000;
+	border-top:8px solid #fdb925;
+}
+	div#footer{
+		width:940px;
+		text-align:left;
+		color:#FFF;
+		margin:0px auto;
+		padding:30px 0px;
+	}
+  div#footer h2 a{
+	color:#fdb925;
+	text-decoration:none;
+	}
+	
+	div#footer div.footer-block{
+		float:left;
+		/*display:inline;cc ie6*/
+		width:220px;
+		margin-right:20px;
+	}
+		div#footer div.footer-block.last{
+			margin-right:0px;
+		}
+		
+		div#footer div.footer-block h2{
+			font-family:Arial, Helvetica, sans-serif !important;
+			font-size:120%;
+			color:#fdb925;
+			font-weight:bold;
+			margin-bottom:20px;
+		}
+		
+		div#footer div.footer-block p{
+			margin-top:0px;
+			line-height:150%;
+		}
+		
+		div#footer div.footer-block ul{
+			list-style:none;
+			margin:0px 0px 20px;
+			padding:0px;
+		}
+			
+			/*partner logos*/
+			div#footer div.footer-block ul.partners li{
+				float:left;
+				display:block;
+				height:72px;
+				margin-right:15px;
+				margin-bottom:20px;
+			}
+				div#footer div.footer-block ul.partners li.end{
+					margin-right:0px;
+				}
+			
+			/*blog posts*/
+			div#footer div.footer-block ul.blog li{
+				line-height:140%;
+				background:url(/img/NMeM/layout/icon_arrow_yellow.gif) left 3px no-repeat;
+				margin-bottom:20px;
+				padding-left:21px;
+			}
+			
+			/*social network logos*/
+			div#footer div.footer-block ul.social li{
+				display:inline;
+				background:none;
+				margin-right:10px;
+				padding-left:0px;
+			}
+		
+		/*newsletter form in footer*/
+		div.supportus{
+		margin: 0 0 20px 0;}
+		div#footer div.footer-block div img{
+			vertical-align:middle;
+		}
+		
+		div#footer div.footer-block div.newsletter input.text{
+			width:140px;
+			height:13px;
+			color:#a4a4a4;
+			background:#FFF url(/img/NMeM/layout/bg_input_search_newsletter.gif) no-repeat;
+			border:none;
+			margin:0px;
+			padding:4px;
+			vertical-align:middle;
+		}
+			div#footer div.footer-block div.newsletter input.text:focus,
+			div#footer div.footer-block div.newsletter input.text:active{
+				color:#000;
+				background:#fce8ac url(/img/NMeM/layout/bg_input_search_newsletter_focus.gif) no-repeat;
+			}
+		
+		div#footer div.footer-block div.newsletter input.submit{
+			margin:0px;
+			padding:0px;
+			vertical-align:middle;
+		}
+		
+	
+	#footer-links{
+	border-top:#FFCC00 solid 1px;
+	padding-bottom:1em;
+
+	}
+	#footer-links li{
+display: inline;
+	}
+	#footer-links ul{
+list-style: none;
+	
+	color:#fff;
+	
+	}
+	#footer-links a {
+	border-left: #333 solid 0.1em;
+	padding: 0 10px;
+	text-decoration: none;
+	font-size: 80%;
+	color:#999;
+	
+	}
+	#footer-links a.home {
+	border: 0;
+	
+	
+	}
+		#footer-links p {
+		font-size: 80%;
+		margin-bottom:0;
+	
+	color:#999;
+	
+	}
+
+		#footer-links p {
+		font-size: 80%;
+		margin-bottom:0;
+	
+	color:#999;
+	
+	}
+.w220-10px h2 a{
+	text-decoration:none;
+	
+	
+	}
+.w220-10px h2 a:visited{
+	color:#198ac5;
+}
+
+
+/* Shop Table (PE)
+=================================================================================
+*/
+
+table.shop {
+	/*border-collapse: collapse; */ /*had to turn it off as ie9 won't render a border shadow if it's on*/
+	text-align:center;
+	table-layout:fixed;
+	}
+
+
+table.shop img {
+	margin: 1.5em 0.5em 0em 0.5em;
+	border: 8px solid white;
+	-moz-box-shadow: 2px 2px 5px #C0C0C0;
+	-webkit-box-shadow: 2px 2px 5px #C0C0C0;
+	box-shadow: 2px 2px 5px #C0C0C0;
+	/* For IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=140, Color='#C0C0C0')"; 
+  	/* For IE 5.5 - 7 */
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=140, Color='#C0C0C0');  
+	} 
+
+table.shop td {
+ 	vertical-align: top;
+ 	padding:0em 0.9em 0.4em 0.9em;
+	}
+
+
+
+/* SuperHV Table (PE)
+=================================================================================
+*/
+
+table.superhv {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 93%;
+	table-layout: fixed;
+	
+	}
+
+	
+.superhv th {
+	background: #A67490; /*url(gradientbackground.gif) repeat-x*/
+	color:#fff;	
+	padding: 0.5em 0 0.5em 0 ;
+	text-align: center;
+	border:1px solid #ffffff;
+	}
+	
+
+
+.superhv td {
+	border:1px solid #ffffff;
+	padding: 0.5em 0 0.5em 0 ;
+	text-align: center;
+	vertical-align:middle;
+	}
+
+	
+.even {
+	background:#FFECA3;
+	}
+
+	
+.odd {
+	background:#F5D9A1;
+	}
+
+	
+.notavailable {
+	background:#F70505;
+	color:#000;	
+	}

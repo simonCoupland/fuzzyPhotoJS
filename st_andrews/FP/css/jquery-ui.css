@@ -22,9 +22,9 @@ padding:2px 5px;
 
 #FPlogo {
 height:28px;
-padding:0px;
+padding:3px;
 margin:0px;
-margin-top:-20px;
+float:left;
 }
 
 /*! jQuery UI - v1.10.3 - 2013-05-03
@@ -221,7 +221,6 @@ button.ui-button::-moz-focus-inner {
 	padding: 0;
 }
 
-
 .ui-dialog {
 	position: absolute;
 	top: 0;
@@ -233,7 +232,7 @@ button.ui-button::-moz-focus-inner {
 .ui-dialog .ui-dialog-titlebar {
 	padding: 0em 0em;
 	position: relative;
-	background-color: #C6B7A3;
+	background-color: #AAA;
 	border-bottom: 1px solid #003;
 }
 .ui-dialog .ui-dialog-title {
@@ -259,7 +258,7 @@ button.ui-button::-moz-focus-inner {
 	padding: 0em 0em;
 	background: none;
 	overflow: auto;
-	background-color:#e8e0d1;
+	background-color:#fff;
 }
 .ui-dialog .ui-dialog-buttonpane {
 	text-align: left;
@@ -358,15 +357,16 @@ body .ui-tooltip {
 	font-size: 1em;
 }
 .ui-widget-content {
-	border: 1px solid #003;
+	border: 1px solid #222;
 	background: #ffffff;
-	color: #003;
+	color: #00539B;
 }
 .ui-widget-content a {
-	color: #003;
+	color: #00539B;
 }
 .ui-widget-header {
-	border-bottom:1px solid #003;
+	border-bottom:1px solid #222;
+	background:#FFF
 }
 
 
@@ -375,15 +375,15 @@ body .ui-tooltip {
 .ui-state-default,
 .ui-widget-content .ui-state-default,
 .ui-widget-header .ui-state-default {
-	border: 1px solid #003;
-	background: #C6B7A3;
+	border: 1px solid #222;
+	background: #FFF;
 	font-weight: normal;
-	color: #003;
+	color: #00539B;
 }
 .ui-state-default a,
 .ui-state-default a:link,
 .ui-state-default a:visited {
-	color: #003;
+	color: #00539B;
 	text-decoration: none;
 }
 .ui-state-hover,
@@ -392,29 +392,29 @@ body .ui-tooltip {
 .ui-state-focus,
 .ui-widget-content .ui-state-focus,
 .ui-widget-header .ui-state-focus {
-	border: 1px solid #003;
+	border: 1px solid #222;
 	font-weight: normal;
-	color: #003;
+	color: #00539B;
 }
 .ui-state-hover a,
 .ui-state-hover a:hover,
 .ui-state-hover a:link,
 .ui-state-hover a:visited {
-	color: #003;
+	color: #00539B;
 	text-decoration: none;
 }
 .ui-state-active,
 .ui-widget-content .ui-state-active,
 .ui-widget-header .ui-state-active {
-	border: 1px solid #003;
-	background: #e8e0d1;
+	border: 1px solid #222;
+	background: #FFF;
 	font-weight: normal;
-	color: #003;
+	color: #00539B;
 }
 .ui-state-active a,
 .ui-state-active a:link,
 .ui-state-active a:visited {
-	color: #003;
+	color: #00539B;
 	text-decoration: none;
 }
 
@@ -449,7 +449,21 @@ body .ui-tooltip {
 	border-bottom-right-radius: 2px;
 }
 
+.ui-icon {
+    background-image: url('../img/close.png');
+}
 
+.ui-icon {
+    width: 16px;
+    height: 16px;
+}
+.ui-icon {
+    display: block;
+    text-indent: -99999px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+
+}
 
 
 
