@@ -449,6 +449,22 @@ body .ui-tooltip {
 	border-bottom-right-radius: 2px;
 }
 
+.ui-icon {
+    background-image: url('../img/close.png');
+}
+
+.ui-icon {
+    width: 16px;
+    height: 16px;
+}
+.ui-icon {
+    display: block;
+    text-indent: -99999px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+
+}
+
 
 
 
