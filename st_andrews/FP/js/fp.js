@@ -44,19 +44,19 @@ function renderFP()
 		 if(g_records.linkCounts[0] > 0) 
 		 {
 			$("<li><a href='#FP_allFields'>All Fields</a></li>").appendTo("#FPTabbedModalContent ul");
-			var str = "<div id='FP_allFields'>" + ERPSFormattedString(0, g_records.allFields, g_records.linkCounts[0]) + "</div>";
+			var str = "<div id='FP_allFields'>" + stAndrewsFormattedString(0, g_records.allFields, g_records.linkCounts[0]) + "</div>";
 			$("#FPTabbedModalContent").append(str);
 		 }
 		 if(g_records.linkCounts[1] > 0) 
 		 {
 			$("<li><a href='#FP_title'>Title</a></li>").appendTo("#FPTabbedModalContent ul");
-			var str = "<div id='FP_title'>" + ERPSFormattedString(0, g_records.title, g_records.linkCounts[1]) + "</div>";
+			var str = "<div id='FP_title'>" + stAndrewsFormattedString(0, g_records.title, g_records.linkCounts[1]) + "</div>";
 			$("#FPTabbedModalContent").append(str);
 		 }
 		 if(g_records.linkCounts[2] > 0) 
 		 {
 			$("<li><a href='#FP_person'>Person</a></li>").appendTo("#FPTabbedModalContent ul");
-			var str = "<div id='FP_person'>" + ERPSFormattedString(0, g_records.person, g_records.linkCounts[2]) + "</div>";
+			var str = "<div id='FP_person'>" + stAndrewsFormattedString(0, g_records.person, g_records.linkCounts[2]) + "</div>";
 			$("#FPTabbedModalContent").append(str);
 		}
 		
@@ -76,7 +76,7 @@ function showFP()
 	$( "#FPTabbedModalContent" ).dialog( "open" );
 }
 
-function ERPSFormattedString(m_groupIndex, m_linkArray, m_linkCount) 
+function stAndrewsFormattedString(m_groupIndex, m_linkArray, m_linkCount) 
 {
 	var l_str = "<div style='padding-top:10px;'>"; // an empty string
 	// The start index of the link array
@@ -98,7 +98,7 @@ function ERPSFormattedString(m_groupIndex, m_linkArray, m_linkCount)
 		if(l_person.length == 0) l_person = "Photographer not known";
 		
 		var l_blurb = l_title + ", " + l_person + ", " + m_linkArray[i].source;
-		l_link = " <a href='" + m_linkArray[i].url + "' target='new'>Click here</a>";
+		l_link = " <a href='" + m_linkArray[i].url + "' target='_blank'>Click here</a>";
 		l_str += "<p>" + l_blurb + l_link + "</p>";			
 	}
 	// Add links to subsequent pages
@@ -144,8 +144,8 @@ function updateFP(m_groupIndex)
 		l_tabIndex[0] = 2;
 		l_tabIndex[1] = 2;
 	}
-	if(l_tabIndex[m_active] == 0) $( "#FP_allFields" ).html(ERPSFormattedString(m_groupIndex, g_records.allFields, g_records.linkCounts[0]));
-	if(l_tabIndex[m_active] == 1) $( "#FP_title" ).html(ERPSFormattedString(m_groupIndex, g_records.title, g_records.linkCounts[1]));
-	if(l_tabIndex[m_active] == 2) $( "#FP_person" ).html(ERPSFormattedString(m_groupIndex, g_records.person, g_records.linkCounts[2]));
+	if(l_tabIndex[m_active] == 0) $( "#FP_allFields" ).html(stAndrewsFormattedString(m_groupIndex, g_records.allFields, g_records.linkCounts[0]));
+	if(l_tabIndex[m_active] == 1) $( "#FP_title" ).html(stAndrewsFormattedString(m_groupIndex, g_records.title, g_records.linkCounts[1]));
+	if(l_tabIndex[m_active] == 2) $( "#FP_person" ).html(stAndrewsFormattedString(m_groupIndex, g_records.person, g_records.linkCounts[2]));
 }
 
