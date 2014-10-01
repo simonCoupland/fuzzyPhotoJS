@@ -1,0 +1,126 @@
+.separator{
+	clear: both;
+	background-image:url(img/lignepts.gif);
+	height:1px;
+	margin:10px -10px 45px -10px;
+	overflow:hidden;
+}
+
+.tetedenotice{
+height : auto !important;
+height : 130px;
+min-height:130px;
+}
+
+.noticeentetes2{
+margin:-65px -10px 0px -10px ;
+	padding:10px 0px 10px 10px;
+/*	height:227px;*/
+	width:505px;
+	overflow:hidden;
+	position:relative;
+}
+
+.noticeentetes3{
+margin:-10px -10px 0px -10px ;
+	padding:10px 0px 10px 10px;
+/*	height:227px;*/
+	width:505px;
+	overflow:hidden;
+	position:relative;
+}
+
+.noticeentetes4{
+	margin:0px -10px 0px -10px;
+	padding:10px 0px 10px 10px;
+	/*overflow:hidden;*/
+	height: auto;
+	width:505px;
+	position:relative;
+	background-color:#FFCC00;
+}
+
+.troiscolonnes{
+	width:515px;
+	top:10px;
+	margin-left:-10px;
+	padding:0px;
+	position:relative;
+	margin-bottom:10px;
+}
+
+.troiscolonnes .firstTiers, .troiscolonnes .secondTiers, .troiscolonnes .lastTiers{
+	width:145px; 
+	float:left; 
+	padding:0px 10px 0px 10px; 
+	overflow:hidden;
+}
+.troiscolonnes .firstTiers, .troiscolonnes .secondTiers{
+	margin-right:10px; 
+}
+
+.titre_notice{
+margin-top: 25px;
+}
+
+h1{
+margin-top:0px;
+margin-bottom:5px;
+padding-top:0px;
+padding-bottom: 0px;
+}
+
+h2{
+margin-top:0px;
+margin-bottom:5px;
+padding-top:0px;
+padding-bottom: 0px;
+}
+
+h6{
+padding-bottom: 0;
+margin-bottom: 5px;
+}
+
+.h3_notice{
+font-weight: normal;
+font-size: 14px;
+color: #4C4C4C;
+margin-bottom: 0px;
+padding-bottom: 0px;
+}
+
+.lien_artiste{
+font-size: 14px;
+color: black;
+}
+
+dl{
+margin-top: 0px;
+}
+
+dt{
+background-repeat: no-repeat;
+padding-left: 10px;
+background-position:0;
+}
+
+dd{
+margin-left: 0px;
+margin-bottom: 5px;
+padding-left: 10px;
+
+}
+
+.unTiers_notice{
+width:145px;
+margin-left:10px;
+padding-left:10px;
+float:left;
+overflow:hidden;
+height : auto !important;
+height : 50px;
+min-height:50px;
+}
+
+

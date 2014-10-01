@@ -167,7 +167,7 @@ function NMMFormattedString(m_groupIndex, m_linkArray, m_linkCount)
 		}
 		l_str += "</div>";
 	}
-	l_str += "<div id=\"FPBottomBar\"><p><a href='http://fuzzyphoto.edublogs.org/' target=\"_blank\" title='Similar photographs from a range of museums.'><img id='FPlogo' class='FPlogo' src='./FP/img/FPlogo.png' align='middle'></a> Some text here about the FuzzyPhoto project.</p></div>";
+	l_str += "<div id=\"FPBottomBar\"><p><a href='http://fuzzyphoto.edublogs.org/' target=\"_blank\" title='Connect to the FuzzyPhoto project that generated these links.'><img id='FPlogo' class='FPlogo' src='./FP/img/FPlogo.png' align='middle'></a> Connect to the FuzzyPhoto project that generated these links.</p></div>";
 	return l_str;
 };
 
