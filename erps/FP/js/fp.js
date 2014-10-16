@@ -14,7 +14,8 @@ function initFP(m_id)
 function FPGetRecord(m_objectID) 
 {
    var m_xmlUrl = ""; // Url of the XML document to be retrieved
-   m_xmlUrl = "http://146.227.222.201/links/erps/" + m_objectID + '.json'; 
+   //m_xmlUrl = "http://146.227.222.201/links/erps/" + m_objectID + '.json'; 
+   m_xmlUrl = "http://10.2.223.68/erps/" + m_objectID + '.json'; 
 
  	$.ajax(
 	{
@@ -35,6 +36,10 @@ function renderFP()
 	  // If any links are founds then ...
 	  if(g_records.linksFound)
 	  {
+		 // Initialise tab variables
+		 var l_tabCounter = 0;
+		 g_records.tabIndices = ["", "", ""];
+		 
 		 // add a link on the page to the modal window
 		 $("#content dl").append("<dt>Links:</dt><dd>Click <span onclick='showFP();' style='text-decoration:underline;cursor:pointer;'>here</span> to view similar items from a range of collections.<a href='http://fuzzyphoto.edublogs.org/' target='_blank'  title='Connect to the FuzzyPhoto project that generated these links.'><img id='FPlogo' src='FP/img/FPlogo.png'></a></dd>");
 		 
@@ -45,18 +50,23 @@ function renderFP()
 			$("<li><a href='#FP_allFields'>All Fields</a></li>").appendTo("#FPTabbedModalContent ul");
 			var str = "<div id='FP_allFields'>" + ERPSFormattedString(0, g_records.allFields, g_records.linkCounts[0]) + "</div>";
 			$("#FPTabbedModalContent").append(str);
+			g_records.tabIndices[l_tabCounter] = "#FP_allFields";
+			l_tabCounter = l_tabCounter + 1;
 		 }
 		 if(g_records.linkCounts[1] > 0) 
 		 {
 			$("<li><a href='#FP_title'>Title</a></li>").appendTo("#FPTabbedModalContent ul");
 			var str = "<div id='FP_title'>" + ERPSFormattedString(0, g_records.title, g_records.linkCounts[1]) + "</div>";
 			$("#FPTabbedModalContent").append(str);
+			g_records.tabIndices[l_tabCounter] = "#FP_title";
+			l_tabCounter = l_tabCounter + 1;
 		 }
 		 if(g_records.linkCounts[2] > 0) 
 		 {
 			$("<li><a href='#FP_person'>Person</a></li>").appendTo("#FPTabbedModalContent ul");
 			var str = "<div id='FP_person'>" + ERPSFormattedString(0, g_records.person, g_records.linkCounts[2]) + "</div>";
 			$("#FPTabbedModalContent").append(str);
+			g_records.tabIndices[l_tabCounter] = "#FP_person";
 		}
 		
 		// Render the tabbed modal window
@@ -121,13 +131,18 @@ function ERPSFormattedString(m_groupIndex, m_linkArray, m_linkCount)
 	return l_str;
 };
 
-function updateFP(m_groupIndex)
+
+function updateFP(l_groupIndex)
 {
 	// Get the index of the currently active tab
-	var m_active = $( "#FPTabbedModalContent" ).tabs( "option", "active" );
+	var l_active = $( "#FPTabbedModalContent" ).tabs( "option", "active" );
+
 	// Update the appropriate tab
-	if(m_active == 0) $( "#FP_allFields" ).html(ERPSFormattedString(m_groupIndex, g_records.allFields, g_records.linkCounts[0]));
-	if(m_active == 1) $( "#FP_title" ).html(ERPSFormattedString(m_groupIndex, g_records.title, g_records.linkCounts[1]));
-	if(m_active == 2) $( "#FP_person" ).html(ERPSFormattedString(m_groupIndex, g_records.person, g_records.linkCounts[2]));
+	var l_tabString = g_records.tabIndices[l_active];
+	if(l_tabString == "#FP_allFields") $( l_tabString ).html(ERPSFormattedString(l_groupIndex, g_records.allFields, g_records.linkCounts[0]));
+
+	if(l_tabString == "#FP_title") $( l_tabString ).html(ERPSFormattedString(l_groupIndex, g_records.title, g_records.linkCounts[1]));
+
+	if(l_tabString == "#FP_person") $( l_tabString ).html(ERPSFormattedString(l_groupIndex, g_records.person, g_records.linkCounts[2]));
 }
 

@@ -98,7 +98,7 @@ function stAndrewsFormattedString(m_groupIndex, m_linkArray, m_linkCount)
 		if(l_person.length == 0) l_person = "Photographer not known";
 		
 		var l_blurb = l_title + ", " + l_person + ", " + m_linkArray[i].source;
-		l_link = " <a href='" + m_linkArray[i].url + "' target='_blank'>Click here</a>";
+		l_link = " <a href='" + m_linkArray[i].link + "' target='_blank'>Click here</a>";
 		l_str += "<p>" + l_blurb + l_link + "</p>";			
 	}
 	// Add links to subsequent pages
