@@ -24,6 +24,7 @@ function FPGetRecord(m_objectID)
 		jsonpCallback: 'FPCallback',
 		contentType: "application/json",
 		dataType: 'jsonp',
+		timeout: 3000,
 		success: function(json) {
 		    g_records = json;
             renderFP();
@@ -40,7 +41,7 @@ function renderFP()
 		 var l_tabCounter = 0;
 		 g_records.tabIndices = ["", "", ""];
 		 // add a link on the page to the modal window
-		 $(".archive ul").append("<li style=\"background-image: url('http://www.musee-orsay.fr/typo3temp/GB/76d4d39bac.gif');\"><span onclick='showFP();' style='color:#BFA619;cursor:pointer;'>Dans d'autres collections via FuzzyPhoto</span></li>");
+		 $(".archive ul").append("<li style=\"background-image: url('http://www.musee-orsay.fr/typo3temp/GB/76d4d39bac.gif');\"><span onclick='showFP();' style='color:#BFA619;cursor:pointer;'>Plus avec FuzzyPhoto</span></li>");
 		 $(".archive ul li span").mouseover(function(){$(this).css("color","black");});
 		 $(".archive ul li span").mouseout(function(){$(this).css("color","#BFA619");});
 		 
@@ -72,13 +73,14 @@ function renderFP()
 		
 		// Render the tabbed modal window
 		$( "#FPTabbedModalContent" ).tabs({ active: 0 });
-		$("#FPTabbedModalContent").prepend("<p><b>Objets similaires class&eacute;es par:</b></p>");
+		$("#FPTabbedModalContent").prepend("<p><b>Objets similaires class&eacute;s par:</b></p>");
 		$( "#FPTabbedModalContent" ).dialog({'modal':true,'minWidth':600, 'minHeight':400,'draggable':true,resizable: false });
 		$( "#FPTabbedModalContent" ).dialog( "close" );
 		// Change the close icon
 		$("button:first-of-type").css("background-image", "url('./FP/img/close.png')");
 		$("button:first-of-type").css("background-repeat", "no-repeat");
 		$("button:first-of-type").css("background-color", "#807366");
+		$("button:first-of-type").css("border", "1px solid white");
 	  }
 };
 
@@ -108,8 +110,8 @@ function orsayFormattedString(m_groupIndex, m_linkArray, m_linkCount)
 		if(l_person.length > l_clipLength) l_person = l_person.substr(0,l_clipLength-1) + "...";
 		if(l_person.length == 0) l_person = "Photographer not known";
 		
-		var l_blurb = l_title + ", " + l_person + ", " + m_linkArray[i].source;
-		l_link = " <a href='" + m_linkArray[i].link + "' target='_blank'>Click here</a>";
+		var l_blurb = l_person + ", " + l_title + ", " + m_linkArray[i].source;
+		l_link = " <a href='" + m_linkArray[i].link + "' target='_blank'>Cliquez ici</a>";
 		l_str += "<p>" + l_blurb + l_link + "</p>";			
 	}
 	// Add links to subsequent pages
@@ -132,7 +134,7 @@ function orsayFormattedString(m_groupIndex, m_linkArray, m_linkCount)
 		l_str += "</div>";
 	}
 	
-	l_str += "<div id=\"FPBottomBar\"><p><a href='http://fuzzyphoto.edublogs.org/' target=\"_blank\" title='En savoir plus sur le projet FuzzyPhoto qui a g&eacute;n&eacute;r&eacute; ces liens.'><img id='FPlogo' class='FPlogo' src='./FP/img/FPlogo.png' align='middle'></a> En savoir plus sur le projet FuzzyPhoto qui a g&eacute;n&eacute;r&eacute; ces liens.</p></div>";
+	l_str += "<div id=\"FPBottomBar\"><p><a href='http://fuzzyphoto.dmu.ac.uk/' target=\"_blank\" title='En savoir plus sur le projet FuzzyPhoto qui a g&eacute;n&eacute;r&eacute; ces liens.'><img id='FPlogo' class='FPlogo' src='./FP/img/FPlogo.png' align='middle'></a> En savoir plus sur le projet <a href='http://fuzzyphoto.dmu.ac.uk/' target=\"_blank\" title='En savoir plus sur le projet FuzzyPhoto qui a g&eacute;n&eacute;r&eacute; ces liens.'>FuzzyPhoto</a> qui a g&eacute;n&eacute;r&eacute; ces liens.</p></div>";
 
 	return l_str;
 };
@@ -140,14 +142,25 @@ function orsayFormattedString(m_groupIndex, m_linkArray, m_linkCount)
 function updateFP(l_groupIndex)
 {
 	// Get the index of the currently active tab
-	var l_active = $( "#FPTabbedModalContent" ).tabs( "option", "active" );
-
+	var m_active = $( "#FPTabbedModalContent" ).tabs( "option", "active" );
 	// Update the appropriate tab
-	var l_tabString = g_records.tabIndices[l_active];
-	if(l_tabString == "#FP_allFields") $( l_tabString ).html(orsayFormattedString(l_groupIndex, g_records.allFields, g_records.linkCounts[0]));
-
-	if(l_tabString == "#FP_title") $( l_tabString ).html(orsayFormattedString(l_groupIndex, g_records.title, g_records.linkCounts[1]));
-
-	if(l_tabString == "#FP_person") $( l_tabString ).html(orsayFormattedString(l_groupIndex, g_records.person, g_records.linkCounts[2]));
+	var l_tabIndex = new Array (0, 1, 2);
+	if (g_records.linkCounts[0] == 0 && g_records.linkCounts[1] > 0) 
+	{
+		l_tabIndex[0] = 1;
+		l_tabIndex[1] = 2;
+	}
+	if (g_records.linkCounts[0] > 0 && g_records.linkCounts[1] == 0) 
+	{
+		l_tabIndex[1] = 2;
+	}
+	if (g_records.linkCounts[0] == 0 && g_records.linkCounts[1] == 0) 
+	{
+		l_tabIndex[0] = 2;
+		l_tabIndex[1] = 2;
+	}
+	if(l_tabIndex[m_active] == 0) $( "#FP_allFields" ).html(orsayFormattedString(m_groupIndex, g_records.allFields, g_records.linkCounts[0]));
+	if(l_tabIndex[m_active] == 1) $( "#FP_title" ).html(orsayFormattedString(m_groupIndex, g_records.title, g_records.linkCounts[1]));
+	if(l_tabIndex[m_active] == 2) $( "#FP_person" ).html(orsayFormattedString(m_groupIndex, g_records.person, g_records.linkCounts[2]));
 }
 

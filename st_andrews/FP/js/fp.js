@@ -37,7 +37,7 @@ function renderFP()
 	  if(g_records.linksFound)
 	  {
 		 // add a link on the page to the modal window
-		 $(".FuzzyPhoto").append("<p><a href='http://fuzzyphoto.edublogs.org/' target='_blank'  title='Connect to the FuzzyPhoto project that generated these links.'><img id='FPlogo' src='./FP/img/FPlogo.png'></a> Click <span onclick='showFP();' style='text-decoration:underline;cursor:pointer;'>here</span> to view similar items from a range of collections.</p>");
+		 $(".FuzzyPhoto").append("<div id=\"related\" class=\"inner_width_4_related\"><p class=\"testwrap\"><a href='http://fuzzyphoto.dmu.ac.uk/' target='_blank'  title='Connect to the FuzzyPhoto project that generated these links.'><img id='FPlogo' src='./FP/img/FPlogo.png'></a> <span onclick='showFP();' style='color:#08C;cursor:pointer;'> Click here to view similar items from a range of collections.</span></p></div>");
 	
 		 // add the content of the modal window
 		 $("#FPTabbedModalContent").append("<ul></ul>");
@@ -63,7 +63,7 @@ function renderFP()
 		// Render the tabbed modal window
 		$( "#FPTabbedModalContent" ).tabs({ active: 0 });
 		$("#FPTabbedModalContent").prepend("<p><b>Similar items you may be interested in grouped by:</b></p>");
-		$( "#FPTabbedModalContent" ).dialog({'modal':true,'minWidth':600, 'minHeight':400,'draggable':true,resizable: false });
+		$( "#FPTabbedModalContent" ).dialog({'modal':true,'minWidth':600, 'minHeight':450,'draggable':true,resizable: false });
 		$( "#FPTabbedModalContent" ).dialog( "close" );
 		// Change the close icon
 		$("button:first-of-type").css("background-image", "url('./FP/img/close.png')");
@@ -120,7 +120,9 @@ function stAndrewsFormattedString(m_groupIndex, m_linkArray, m_linkCount)
 		}
 		l_str += "</div>";
 	}
-	
+	l_str += "<div id=\"FPBottomBar\"><p><a href='http://fuzzyphoto.dmu.ac.uk/' target=\"_blank\" title='Connect to the FuzzyPhoto project that generated these links.'><img id='FPlogo' class='FPlogo' src='./FP/img/FPlogo.png' align='middle'></a>";
+	l_str += "Your query has been extended over 1.4 million photographs held worldwide at the following institutions: ";
+	l_str += "Birmingham City Library, the British Library, Brooklyn museum, Culture Grid, the Metropolitan Museum of Art, the Musée d’Orsay, the National Archives, the National Media Museum, National Museums Scotland, the Victoria and Albert Museum and St. Andrews University library.  </p></div>";
 	return l_str;
 };
 

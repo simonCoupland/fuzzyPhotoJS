@@ -135,14 +135,25 @@ function ERPSFormattedString(m_groupIndex, m_linkArray, m_linkCount)
 function updateFP(l_groupIndex)
 {
 	// Get the index of the currently active tab
-	var l_active = $( "#FPTabbedModalContent" ).tabs( "option", "active" );
-
+	var m_active = $( "#FPTabbedModalContent" ).tabs( "option", "active" );
 	// Update the appropriate tab
-	var l_tabString = g_records.tabIndices[l_active];
+	var l_tabIndex = new Array (0, 1, 2);
+	if (g_records.linkCounts[0] == 0 && g_records.linkCounts[1] > 0) 
+	{
+		l_tabIndex[0] = 1;
+		l_tabIndex[1] = 2;
+	}
+	if (g_records.linkCounts[0] > 0 && g_records.linkCounts[1] == 0) 
+	{
+		l_tabIndex[1] = 2;
+	}
+	if (g_records.linkCounts[0] == 0 && g_records.linkCounts[1] == 0) 
+	{
+		l_tabIndex[0] = 2;
+		l_tabIndex[1] = 2;
+	}
 	if(l_tabString == "#FP_allFields") $( l_tabString ).html(ERPSFormattedString(l_groupIndex, g_records.allFields, g_records.linkCounts[0]));
-
 	if(l_tabString == "#FP_title") $( l_tabString ).html(ERPSFormattedString(l_groupIndex, g_records.title, g_records.linkCounts[1]));
-
 	if(l_tabString == "#FP_person") $( l_tabString ).html(ERPSFormattedString(l_groupIndex, g_records.person, g_records.linkCounts[2]));
 }
 
